@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 namespace KubeWorldAR {
 
@@ -12,6 +12,8 @@ namespace KubeWorldAR {
         Settings = 1,
         Controls = 2,
         HowToPlay = 3,
+        ArModePanel=4,
+        PlayModePanel=5
     }
 
 
@@ -24,8 +26,7 @@ namespace KubeWorldAR {
     }
 
     public class MenuCanvasManager : MonoBehaviour
-    {   [SerializeField]
-        PanelType type;
+    {   
 
         [SerializeField]List<PanelInfo> _panelList;
 
@@ -50,11 +51,14 @@ namespace KubeWorldAR {
                 }
             }
         }
+
+        public void LoadModeWithParam(int mode)
+        {
+            PlayerPrefs.SetInt("MODE", mode);
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
+        }
+
         
-
-
-       
-
 
     }
 }

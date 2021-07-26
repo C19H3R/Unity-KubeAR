@@ -12,10 +12,13 @@ namespace KubeWorldAR
         PlayMode = 1,
     }
 
-
+    
 
     public class GameManager : MonoBehaviour
     {
-        
+        private void Start()
+        {
+            
+        }
     }
 }
