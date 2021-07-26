@@ -15,7 +15,7 @@ namespace KubeWorldAR
 
         public void OnSpeakerValueChange(float value)
         {
-            if (value == 0)
+            if (value <=0.01f)
             {
                 _targetSliderKnob.sprite = _knobSprites[0];
             }
@@ -30,7 +30,7 @@ namespace KubeWorldAR
         }
         public void OnMusicValueChange(float value)
         {
-            if (value == 0)
+            if (value <= 0.01f)
             {
                 _targetSliderKnob.sprite = _knobSprites[0];
             }
