@@ -134,6 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90d6a24e1942ed43ab86e3181f2d851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &614699281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+  m_PrefabInstance: {fileID: 8789407644071331996}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &637993764
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +304,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &724026674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+  m_PrefabInstance: {fileID: 8789407644071331996}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &780063435
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +441,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d802f6e02a4a9074db37fa9b668868c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _master: {fileID: 24100000, guid: c6325eb8978f2d142a2a03892c2eb852, type: 2}
+  _music: {fileID: 24100000, guid: 66a3233dcdb283e45a7db18d58e983fd, type: 2}
+  _musicSlider: {fileID: 614699281}
+  _masterSlider: {fileID: 724026674}
 --- !u!1 &1692768213
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +482,7 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0
     loop: 1
-    mixerGroup: {fileID: 24300002, guid: c6325eb8978f2d142a2a03892c2eb852, type: 2}
+    mixerGroup: {fileID: 24300002, guid: 66a3233dcdb283e45a7db18d58e983fd, type: 2}
     source: {fileID: 0}
   - type: 1
     clip: {fileID: 8300000, guid: c694bf3f0cd2bdc48b9ab0098952bdb6, type: 3}
@@ -465,7 +491,7 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0
     loop: 0
-    mixerGroup: {fileID: 24300002, guid: 66a3233dcdb283e45a7db18d58e983fd, type: 2}
+    mixerGroup: {fileID: 24300002, guid: c6325eb8978f2d142a2a03892c2eb852, type: 2}
     source: {fileID: 0}
 --- !u!4 &1692768215
 Transform:
@@ -539,6 +565,38 @@ PrefabInstance:
     - target: {fileID: 523026838, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1354835933}
+    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetMasterVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1090694421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -668,7 +726,47 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1354835933}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2401807070577756000, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284990882315048618, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

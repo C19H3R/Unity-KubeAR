@@ -61,7 +61,7 @@ namespace KubeWorldAR
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.clip;
                 s.source.loop = s.loop;
-
+                s.source.outputAudioMixerGroup = s.mixerGroup;
                 
             }
         }
