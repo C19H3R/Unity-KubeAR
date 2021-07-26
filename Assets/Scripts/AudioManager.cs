@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
-
 namespace KubeWorldAR
 {
     [System.Serializable]
@@ -29,13 +28,15 @@ namespace KubeWorldAR
         [HideInInspector]
         public AudioSource source;
     }
-
     [System.Serializable]
     public enum SoundType
     {
-        ThemeMusic=0,
-        UiSound=1,
+        ThemeMusic = 0,
+        UiSound = 1,
     }
+
+
+
 
     public class AudioManager : MonoBehaviour
     {
@@ -56,13 +57,13 @@ namespace KubeWorldAR
                 instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            foreach ( Sound s in _sounds)
+            foreach (Sound s in _sounds)
             {
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.clip;
                 s.source.loop = s.loop;
                 s.source.outputAudioMixerGroup = s.mixerGroup;
-                
+
             }
         }
 

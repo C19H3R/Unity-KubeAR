@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 namespace KubeWorldAR {
 
     [System.Serializable]
@@ -12,10 +11,9 @@ namespace KubeWorldAR {
         Settings = 1,
         Controls = 2,
         HowToPlay = 3,
-        ArModePanel=4,
-        PlayModePanel=5
+        ArModePanel = 4,
+        PlayModePanel = 5
     }
-
 
     [System.Serializable]
     public class PanelInfo
@@ -52,13 +50,18 @@ namespace KubeWorldAR {
             }
         }
 
-        public void LoadModeWithParam(int mode)
+        public void LoadEditMode()
         {
-            PlayerPrefs.SetInt("MODE", mode);
+            GameManager.instance.SwitchGameMode(GameMode.EditMode);
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
+        }
+        public void LoadPlayMode()
+        {
+            GameManager.instance.SwitchGameMode(GameMode.PlayMode);
             SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
 
-        
+
 
     }
 }
