@@ -60,7 +60,7 @@ namespace KubeWorldAR {
             GameManager.instance.SwitchGameMode(GameMode.PlayMode);
             SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
-
+       
 
 
     }

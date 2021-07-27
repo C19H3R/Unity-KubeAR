@@ -153,17 +153,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &533905811 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8789407644071331998, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-  m_PrefabInstance: {fileID: 8789407644071331996}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90d6a24e1942ed43ab86e3181f2d851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &614699281 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
@@ -549,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentMode: 0
+  _currentState: 0
 --- !u!1 &1692768213
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,350 +608,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 94977565, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 94977565, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 94977565, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 464461689, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 464461689, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 464461689, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 464461689, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 464461689, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 464461689, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 464461689, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 464461689, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 523026838, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 523026838, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_MinValue
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetMasterVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 901101681, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1090694421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1090694421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465681917, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465681917, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465681917, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 533905811}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ButtonSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OpenPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.MenuCanvasManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1465814029, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511701952, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511701952, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1511701952, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 1511701952, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511701952, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511701952, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511701952, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511701952, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773839483, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773839483, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1773839483, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 1773839483, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773839483, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773839483, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773839483, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_MinValue
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetMusicVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133103975, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2401807070577756000, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284990882315048618, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643722159421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643722159421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8789407643722159421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 8789407643722159421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643722159421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643722159421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643722159421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643722159421, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 533905811}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ButtonSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LoadEditMode
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.MenuCanvasManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407643798011121, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8789407643922744249, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1054,129 +736,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8789407644071331998, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: _panelList.Array.data[0].PanelObject
-      value: 
-      objectReference: {fileID: 8789407644071332000}
-    - target: {fileID: 8789407644071331998, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: _panelList.Array.data[1].PanelObject
-      value: 
-      objectReference: {fileID: 8789407644071331999}
-    - target: {fileID: 8789407644071331998, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: _panelList.Array.data[2].PanelObject
-      value: 
-      objectReference: {fileID: 8789407644071331998}
-    - target: {fileID: 8789407644071331998, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: _panelList.Array.data[3].PanelObject
-      value: 
-      objectReference: {fileID: 8789407644071331997}
-    - target: {fileID: 8789407645258124489, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645258124489, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8789407645258124489, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 8789407645258124489, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645258124489, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645258124489, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645258124489, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645258124489, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1354835933}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 533905811}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ButtonSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LoadPlayMode
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: KubeWorldAR.AudioManagerFunctions, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: KubeWorldAR.MenuCanvasManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789407645694490273, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
---- !u!1 &8789407644071331997 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4313624143211549405, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-  m_PrefabInstance: {fileID: 8789407644071331996}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8789407644071331998 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1282544092186329799, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-  m_PrefabInstance: {fileID: 8789407644071331996}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8789407644071331999 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2401807070577756000, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-  m_PrefabInstance: {fileID: 8789407644071331996}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8789407644071332000 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8284990882315048618, guid: f937a9081f9c11b48907bf999ee7503b, type: 3}
-  m_PrefabInstance: {fileID: 8789407644071331996}
-  m_PrefabAsset: {fileID: 0}

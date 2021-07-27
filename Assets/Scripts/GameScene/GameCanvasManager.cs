@@ -12,21 +12,27 @@ namespace KubeWorldAR
         [SerializeField]
         GameObject _playModePanel;
         [SerializeField]
+        GameObject _pausePanel;
+        [SerializeField]
         private void OnEnable()
         {
-            GameManager.OnGameModeChange += SwitchGameModePanel;
+            GameManager.OnGameModeChange += this.OnGameModeChange;
+            GameManager.OnGameStateChange += this.OnGameStateChange;
         }
         private void OnDisable()
         {
-            GameManager.OnGameModeChange -= SwitchGameModePanel;
+
+            GameManager.OnGameModeChange -= this.OnGameModeChange;
+            GameManager.OnGameStateChange -= this.OnGameStateChange;
+
         }
 
         void Start()
         {
-            SwitchGameModePanel(GameManager.instance.CurrentMode);
+            this.OnGameModeChange(GameManager.instance.CurrentMode);
         }
 
-        private void SwitchGameModePanel(GameMode newMode)
+        private void OnGameModeChange(GameMode newMode)
         {
             switch (newMode)
             {
@@ -37,6 +43,25 @@ namespace KubeWorldAR
                 case GameMode.PlayMode:
                     _aRModePanel.SetActive(false);
                     _playModePanel.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        private void OnGameStateChange(GameState gameState)
+        {
+            switch (gameState)
+            {
+                case GameState.Running:
+                    _pausePanel.SetActive(false);
+                    this.OnGameModeChange(GameManager.instance.CurrentMode);
+                    break;
+                case GameState.Paused:
+                    _pausePanel.SetActive(true);
+                    _aRModePanel.SetActive(false);
+                    _playModePanel.SetActive(false);
+
                     break;
                 default:
                     break;

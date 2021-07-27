@@ -12,13 +12,18 @@ namespace KubeWorldAR
         EditMode = 0,
         PlayMode = 1,
     }
-    
+    public enum GameState
+    {
+        Running=0,
+        Paused=1
+    }
+
 
 
 
     public class GameManager : MonoBehaviour
     {
-        #region Singelton
+        #region Singleton
         public static GameManager instance;
 
         private void Awake()
@@ -34,14 +39,24 @@ namespace KubeWorldAR
             }
         }
         #endregion
-
         public static event Action<GameMode> OnGameModeChange;
+        public static event Action<GameState> OnGameStateChange;
         [SerializeField]
         GameMode _currentMode;
+        
         public GameMode CurrentMode
         {
             get { return _currentMode; }
         }
+        
+        [SerializeField]
+        GameState _currentState;
+
+        public GameState CurrentState
+        {
+            get { return _currentState; }
+        }
+
         public void SwitchGameMode(GameMode newMode)
         {
             _currentMode = newMode;
@@ -57,6 +72,23 @@ namespace KubeWorldAR
             }
 
             OnGameModeChange?.Invoke(newMode);
+        }
+
+        public void ChangeGameState(GameState newState)
+        {
+            _currentState = newState;
+
+            switch (newState)
+            {
+                case GameState.Running:
+                    break;
+                case GameState.Paused:
+                    break;
+                default:
+                    break;
+            }
+
+            OnGameStateChange?.Invoke(newState);
         }
     }
 }

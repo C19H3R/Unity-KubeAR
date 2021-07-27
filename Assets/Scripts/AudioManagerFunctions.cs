@@ -17,6 +17,7 @@ namespace KubeWorldAR
         [SerializeField] Slider _musicSlider;
         [SerializeField] Slider _masterSlider;
 
+
         [HideInInspector]
         float masterLevel, musicLevel;
         public void ButtonSound()
@@ -29,7 +30,7 @@ namespace KubeWorldAR
             masterLevel = Mathf.Log10(level) * 20;
             _master.SetFloat("MasterVolume", masterLevel);
 
-
+            Debug.Log("GG");
             if (_musicSlider.value > level)
                 _musicSlider.value = level;
         }
@@ -40,6 +41,15 @@ namespace KubeWorldAR
 
             if (_masterSlider.value < level)
                 _masterSlider.value = level;
+
+        }
+
+        public void SetVolumeInGame(float level)
+        {
+            musicLevel = Mathf.Log10(level) * 20;
+            _music.SetFloat("MusicVolume", musicLevel);
+            masterLevel = Mathf.Log10(level) * 20;
+            _master.SetFloat("MasterVolume", masterLevel);
 
         }
     }
