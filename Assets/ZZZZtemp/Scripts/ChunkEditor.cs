@@ -36,10 +36,13 @@ public class ChunkEditor : MonoBehaviour
 
 
                 int size = _chunkSO.Size;
-                
+                if(newBlockPos.x>=0&&newBlockPos.y>=0&&newBlockPos.z>=0&&
+                    newBlockPos.x<size&&newBlockPos.y<size&& newBlockPos.z < size)
+                {
                     _chunkSO.SetCell(pos,true);
-
+                    
                     OnChunkUpdate?.Invoke(_chunkSO);
+                }
 
             }
         }

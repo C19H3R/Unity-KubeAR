@@ -18,9 +18,9 @@ public class Chunk : ScriptableObject
     [SerializeField]
     int[,,] chunkData= new int[,,]{
         {
-        { 1,1,1 },
-        { 1,1,1 },
-        { 1,1,1 },
+        { 0,0,0 },
+        { 0,0,0 },
+        { 0,0,0 },
         },
         {
         { 0,0,0 },
@@ -28,9 +28,9 @@ public class Chunk : ScriptableObject
         { 0,0,0 },
         },
         {
-        { 0,1,0 },
-        { 1,1,1 },
-        { 0,1,0 },
+        { 0,0,0 },
+        { 0,0,0 },
+        { 0,0,0 },
         },
     };
 
