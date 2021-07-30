@@ -140,7 +140,7 @@ public class ChunkRenderer : MonoBehaviour
         _vertices = new List<Vector3>();
         _triangles = new List<int>();
 
-        int randomVal = UnityEngine.Random.Range(1, 10);
+        int randomVal = UnityEngine.Random.Range(1, 100);
         for (int x = 0; x < chunkData.Size; x++)
         {
             for (int z = 0; z < chunkData.Size; z++)
