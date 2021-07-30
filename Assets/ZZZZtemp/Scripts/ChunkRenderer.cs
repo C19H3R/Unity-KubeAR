@@ -16,10 +16,14 @@ public class ChunkRenderer : MonoBehaviour
     [SerializeField]
     float _scale = 1f;
 
-
+    [SerializeField]
+    Gradient gradient;
 
     List<Vector3> _vertices;
     List<int> _triangles;
+    List<Color> _vertexColor;
+
+    
 
     #region MonoBehaviourCallBacks
 
@@ -36,8 +40,8 @@ public class ChunkRenderer : MonoBehaviour
 
     private void Start()
     {
-        GenerateChunkMesh(_chunkSO);
-        
+       // GenerateBasicChunkMesh(_chunkSO);
+        GenerateTerrainChunkMesh(_chunkSO);
     }
 
     #endregion
@@ -47,6 +51,8 @@ public class ChunkRenderer : MonoBehaviour
     {
         _vertices = new List<Vector3>();
         _triangles = new List<int>();
+
+
         for (int x = 0; x < chunkData.Size; x++)
         {
             for (int y = 0; y < chunkData.Size; y++)
@@ -65,6 +71,7 @@ public class ChunkRenderer : MonoBehaviour
                 }
             }
         }
+
         UpdateMesh();
     }
 
@@ -76,7 +83,6 @@ public class ChunkRenderer : MonoBehaviour
             {
                 MakeFace((Direction)i, scale, cubePos);
             }
-
         }
     }
 
@@ -86,6 +92,7 @@ public class ChunkRenderer : MonoBehaviour
         _vertices.AddRange(CubeMeshInfo.faceVertices((int)dir, faceScale, facePos));
         int vCount = _vertices.Count - 4;
 
+
         _triangles.Add(vCount + 0);
         _triangles.Add(vCount + 1);
         _triangles.Add(vCount + 2);
@@ -93,6 +100,8 @@ public class ChunkRenderer : MonoBehaviour
         _triangles.Add(vCount + 0);
         _triangles.Add(vCount + 2);
         _triangles.Add(vCount + 3);
+
+        
     }
 
     private void UpdateMesh()
@@ -109,7 +118,55 @@ public class ChunkRenderer : MonoBehaviour
 
     }
 
+    private void GenerateBasicChunkMesh(Chunk chunkData)
+    {
+        _vertices = new List<Vector3>();
+        _triangles = new List<int>();
 
 
+        for (int x = 0; x < chunkData.Size; x++)
+        {
+                for (int z = 0; z < chunkData.Size; z++)
+                {
+                chunkData.SetCell(x, 0, z, true);
+                }
+        }
+
+        GenerateChunkMesh(chunkData);
+    }
+
+    private void GenerateTerrainChunkMesh(Chunk chunkData)
+    {
+        _vertices = new List<Vector3>();
+        _triangles = new List<int>();
+
+        int randomVal = UnityEngine.Random.Range(1, 10);
+        for (int x = 0; x < chunkData.Size; x++)
+        {
+            for (int z = 0; z < chunkData.Size; z++)
+            {
+
+                int y = CalculateHeight(x, z, randomVal);
+
+                for (int i = 1; i < y; i++)
+                {
+                    chunkData.SetCell(x, i, z, true);
+                }
+                chunkData.SetCell(x, 0, z, true);
+            }
+        }
+
+        GenerateChunkMesh(chunkData);
+    }
+
+    private int CalculateHeight(int x,int y,int seed)
+    {
+        float xCoord = (float)x / 10;
+        float yCoord = (float)y / 10;
+        float sample = Mathf.PerlinNoise(xCoord+seed, yCoord+ seed);
+        sample = Mathf.Clamp(sample, 0f, 1f);
+        sample *= 10;
+        return (int)sample;
+    }
 
 }

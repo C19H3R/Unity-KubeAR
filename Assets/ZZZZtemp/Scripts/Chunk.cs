@@ -5,8 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ChunkData", menuName = "ScriptableObjects/ChunkSO", order = 1)]
 public class Chunk : ScriptableObject
 {
+    
     [SerializeField]
-    int size = 3;
+    int[,,] chunkData = new int[10, 10, 10];
+    [SerializeField]
+    int size = 10;
 
     public int Size
     {
@@ -15,24 +18,6 @@ public class Chunk : ScriptableObject
             return size;
         }
     }
-    [SerializeField]
-    int[,,] chunkData= new int[,,]{
-        {
-        { 0,0,0 },
-        { 0,0,0 },
-        { 0,0,0 },
-        },
-        {
-        { 0,0,0 },
-        { 0,1,0 },
-        { 0,0,0 },
-        },
-        {
-        { 0,0,0 },
-        { 0,0,0 },
-        { 0,0,0 },
-        },
-    };
 
     public int GetCell(int x, int y, int z)
     {
