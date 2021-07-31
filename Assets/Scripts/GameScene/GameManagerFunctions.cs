@@ -7,6 +7,7 @@ namespace KubeWorldAR
 {
     public class GameManagerFunctions : MonoBehaviour
     {
+
         public void PlayMode()
         {
             GameManager.instance.SwitchGameMode(GameMode.PlayMode);

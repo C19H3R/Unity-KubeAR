@@ -19,6 +19,8 @@ public class ChunkRenderer : MonoBehaviour
     [SerializeField]
     Gradient gradient;
 
+    Vector3 _updatedOrigin;
+
     List<Vector3> _vertices;
     List<int> _triangles;
     List<Color> _vertexColor;
@@ -43,12 +45,15 @@ public class ChunkRenderer : MonoBehaviour
        // GenerateBasicChunkMesh(_chunkSO);
         GenerateTerrainChunkMesh(_chunkSO);
     }
-
-    #endregion
     
+    #endregion
+
 
     private void GenerateChunkMesh(Chunk chunkData)
     {
+        _updatedOrigin = this.transform.position;
+
+
         _vertices = new List<Vector3>();
         _triangles = new List<int>();
 
