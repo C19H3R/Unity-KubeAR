@@ -3548,6 +3548,9 @@ MonoBehaviour:
   - id: 3
     key: 3
     PanelObject: {fileID: 4313624143211549405}
+  - id: 4
+    key: 0
+    PanelObject: {fileID: 0}
 --- !u!1 &8789407644223998251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,7 +3568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8789407644223998244
 RectTransform:
   m_ObjectHideFlags: 0
