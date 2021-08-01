@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2456736542101500367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.5, y: 0, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2456736540978814650}
@@ -145,7 +145,7 @@ MonoBehaviour:
   _chunkSO: {fileID: 11400000, guid: 7ceb7e8fe1eed124883624a5fd2175df, type: 2}
   _meshFilter: {fileID: 2456736542101500361}
   _meshCollider: {fileID: 2456736542101500362}
-  _scale: 1
+  _scale: 0.1
   gradient:
     serializedVersion: 2
     key0: {r: 0, g: 0.078431375, b: 1, a: 1}
@@ -188,3 +188,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chunkSO: {fileID: 11400000, guid: 7ceb7e8fe1eed124883624a5fd2175df, type: 2}
+  placeHolderCube: {fileID: 0}
+  scale: 0.1

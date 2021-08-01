@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -8,8 +9,8 @@ using UnityEngine.XR.ARSubsystems;
 public class ChunkPlacer : MonoBehaviour
 {
     [SerializeField]
-    GameObject _chunkIbject;
-    
+    GameObject _chunkObject;
+
     
 
 
@@ -25,7 +26,7 @@ public class ChunkPlacer : MonoBehaviour
 
     }
 
-
+   
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
     {
@@ -44,13 +45,26 @@ public class ChunkPlacer : MonoBehaviour
         {
             return;
         }
-        if (_aRRaycastManager.Raycast(touchPos, hits, TrackableType.PlaneWithinPolygon))
+        bool isOverUi=IsPointerOverUIObject();
+        if (!isOverUi&&_aRRaycastManager.Raycast(touchPos, hits, TrackableType.PlaneWithinPolygon))
         {
             var hitPose = hits[0].pose;
 
-            _chunkIbject.transform.position = hitPose.position;
+            _chunkObject.transform.position = hitPose.position;
+           
+            
+
         }
     }
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
 
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+        return results.Count > 0;
+    }
 
 }

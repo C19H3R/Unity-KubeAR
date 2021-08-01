@@ -13,10 +13,13 @@ public class ChunkEditor : MonoBehaviour
 
     Vector3 placeHolderPos;
 
+    Vector3 hitPosition;
+
     bool create;
     bool destroy;
 
     //event 
+    public float scale;
     public static Action<Chunk> OnChunkUpdate;
 
     private void FixedUpdate()
@@ -53,15 +56,23 @@ public class ChunkEditor : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(Camera.main.transform.position, ray.direction * 20, Color.red);
-
+        
         if (Physics.Raycast(ray, out hit, 1000f))
         {
-            Vector3 newBlockPos = hit.point + hit.normal / 2f;
+
+            Debug.DrawRay(Camera.main.transform.position, ray.direction*20, Color.yellow);
+            Vector3 newBlockPos = hit.point + hit.normal* scale / 2f;
             Vector3 pos;
-            pos.x = Mathf.Round(newBlockPos.x);
-            pos.y = Mathf.Round(newBlockPos.y);
-            pos.z = Mathf.Round(newBlockPos.z);
+            pos.x = Mathf.Round(newBlockPos.x /scale);
+            pos.y = Mathf.Round(newBlockPos.y / scale);
+            pos.z = Mathf.Round(newBlockPos.z / scale);
+
+            pos *= scale;
+            pos += new Vector3(0.045f, 0.0f,0.045f);
+            Debug.Log(hit.normal);
+            hitPosition = hit.point;
+            Debug.DrawRay(hitPosition,hit.normal * scale / 2f, Color.red);
+
 
             placeHolderPos = pos;
         }
@@ -73,7 +84,7 @@ public class ChunkEditor : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 1000f))
         {
-            Vector3 newBlockPos = hit.point - hit.normal / 2f;
+            Vector3 newBlockPos = hit.point - hit.normal * scale / 2f;
             Vector3 origin = transform.position;
             newBlockPos = newBlockPos - origin;
             transform.position = Vector3.zero;
@@ -81,10 +92,9 @@ public class ChunkEditor : MonoBehaviour
 
             Debug.DrawRay(Camera.main.transform.position, ray.direction * 20, Color.red);
 
-            pos.x = (float)Math.Round(newBlockPos.x, MidpointRounding.AwayFromZero);
-            pos.y = (float)Math.Round(newBlockPos.y, MidpointRounding.AwayFromZero);
-            pos.z = (float)Math.Round(newBlockPos.z, MidpointRounding.AwayFromZero);
-
+            pos.x = (float)Math.Round(newBlockPos.x / scale, MidpointRounding.AwayFromZero);
+            pos.y = (float)Math.Round(newBlockPos.y / scale, MidpointRounding.AwayFromZero);
+            pos.z = (float)Math.Round(newBlockPos.z / scale, MidpointRounding.AwayFromZero);
             Debug.Log("newBlockPos" + newBlockPos);
             Debug.Log("hit point" + hit.point);
             Debug.Log("pos" + pos);
@@ -109,7 +119,7 @@ public class ChunkEditor : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 1000f))
         {
-            Vector3 newBlockPos = hit.point + hit.normal / 2f;
+            Vector3 newBlockPos = hit.point + hit.normal * scale / 2f;
             Vector3 origin = transform.position;
             newBlockPos = newBlockPos - origin;
             transform.position = Vector3.zero;
@@ -117,9 +127,9 @@ public class ChunkEditor : MonoBehaviour
 
             Debug.DrawRay(Camera.main.transform.position, ray.direction * 20, Color.red);
 
-            pos.x = (float)Math.Round(newBlockPos.x, MidpointRounding.AwayFromZero);
-            pos.y = (float)Math.Round(newBlockPos.y, MidpointRounding.AwayFromZero);
-            pos.z = (float)Math.Round(newBlockPos.z, MidpointRounding.AwayFromZero);
+            pos.x = (float)Math.Round(newBlockPos.x/scale, MidpointRounding.AwayFromZero);
+            pos.y = (float)Math.Round(newBlockPos.y / scale, MidpointRounding.AwayFromZero);
+            pos.z = (float)Math.Round(newBlockPos.z / scale, MidpointRounding.AwayFromZero);
 
             Debug.Log("newBlockPos" + newBlockPos);
             Debug.Log("hit point" + hit.point);
@@ -147,6 +157,12 @@ public class ChunkEditor : MonoBehaviour
     public void OnDestroyButton()
     {
         destroy = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(hitPosition, 0.05f);
+        Gizmos.color = Color.yellow;
     }
 }
 
