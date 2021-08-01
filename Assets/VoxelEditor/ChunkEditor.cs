@@ -13,6 +13,9 @@ public class ChunkEditor : MonoBehaviour
 
     Vector3 placeHolderPos;
 
+    bool create;
+    bool destroy;
+
     //event 
     public static Action<Chunk> OnChunkUpdate;
 
@@ -21,21 +24,29 @@ public class ChunkEditor : MonoBehaviour
         UpdatePlaceHolderPosition();
         
         //create new block
-        if (Input.GetMouseButtonDown(0))
+        if (create)
         {
             CreateBlock();
+            create=false;
         }
         //destrou block
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (destroy)
         {
             DestroyBlock();
-
+            destroy = false;
         }
     }
 
     private void Update()
     {
+
         placeHolderCube.transform.position = placeHolderPos;
+
+        if (Input.GetMouseButtonDown(0))
+            create = true;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            destroy = true;
     }
 
     private void UpdatePlaceHolderPosition()
