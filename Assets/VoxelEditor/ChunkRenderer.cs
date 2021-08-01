@@ -25,6 +25,7 @@ public class ChunkRenderer : MonoBehaviour
     List<int> _triangles;
     List<Color> _vertexColor;
 
+
     
 
     #region MonoBehaviourCallBacks
@@ -32,10 +33,14 @@ public class ChunkRenderer : MonoBehaviour
     private void OnEnable()
     {
         ChunkEditor.OnChunkUpdate += GenerateChunkMesh;
+
+        ChunkEditorAR.OnChunkUpdate += GenerateChunkMesh;
     }
 
     private void OnDisable()
     {
+        ChunkEditorAR.OnChunkUpdate += GenerateChunkMesh;
+
         ChunkEditor.OnChunkUpdate -= GenerateChunkMesh;
 
     }

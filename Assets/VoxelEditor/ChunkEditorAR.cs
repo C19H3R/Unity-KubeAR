@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ChunkEditor : MonoBehaviour
+public class ChunkEditorAR : MonoBehaviour
 {
     [SerializeField]
     Chunk _chunkSO;
@@ -11,7 +11,11 @@ public class ChunkEditor : MonoBehaviour
     [SerializeField]
     GameObject placeHolderCube;
 
-    Vector3 placeHolderPos;
+    [SerializeField]
+   
+     Camera _arCamera;
+
+    Vector3 placeHolderPos=Vector3.zero;
 
     bool create;
     bool destroy;
@@ -19,15 +23,22 @@ public class ChunkEditor : MonoBehaviour
     //event 
     public static Action<Chunk> OnChunkUpdate;
 
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
     private void FixedUpdate()
     {
         UpdatePlaceHolderPosition();
-        
+        placeHolderCube.transform.position = placeHolderPos;
         //create new block
         if (create)
         {
             CreateBlock();
-            create=false;
+            create = false;
         }
         //destrou block
         if (destroy)
@@ -37,23 +48,13 @@ public class ChunkEditor : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
 
-        placeHolderCube.transform.position = placeHolderPos;
-
-        if (Input.GetMouseButtonDown(0))
-            create = true;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-            destroy = true;
-    }
 
     private void UpdatePlaceHolderPosition()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(Camera.main.transform.position, ray.direction * 20, Color.red);
+        Ray ray = _arCamera.ScreenPointToRay(new Vector3(0.5F, 0.5F, 0));
+        Debug.DrawRay(_arCamera.transform.position, ray.direction * 20, Color.red);
 
         if (Physics.Raycast(ray, out hit, 1000f))
         {
@@ -70,7 +71,7 @@ public class ChunkEditor : MonoBehaviour
     private void DestroyBlock()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _arCamera.ScreenPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit, 1000f))
         {
             Vector3 newBlockPos = hit.point - hit.normal / 2f;
@@ -79,7 +80,7 @@ public class ChunkEditor : MonoBehaviour
             transform.position = Vector3.zero;
             Vector3 pos;
 
-            Debug.DrawRay(Camera.main.transform.position, ray.direction * 20, Color.red);
+            Debug.DrawRay(_arCamera.transform.position, ray.direction * 20, Color.red);
 
             pos.x = (float)Math.Round(newBlockPos.x, MidpointRounding.AwayFromZero);
             pos.y = (float)Math.Round(newBlockPos.y, MidpointRounding.AwayFromZero);
@@ -106,7 +107,7 @@ public class ChunkEditor : MonoBehaviour
     private void CreateBlock()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _arCamera.ScreenPointToRay(new Vector3(0.5f,0.5f,0));
         if (Physics.Raycast(ray, out hit, 1000f))
         {
             Vector3 newBlockPos = hit.point + hit.normal / 2f;
@@ -149,4 +150,3 @@ public class ChunkEditor : MonoBehaviour
         destroy = true;
     }
 }
-
