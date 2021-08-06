@@ -61,14 +61,19 @@ public class ChunkEditor : MonoBehaviour
         {
 
             Debug.DrawRay(Camera.main.transform.position, ray.direction*20, Color.yellow);
-            Vector3 newBlockPos = hit.point + hit.normal* scale / 2f;
+            Vector3 newBlockPos = hit.point + (hit.normal*scale) / 2f;
+
+            Vector3 origin=transform.position;
+            newBlockPos = newBlockPos - origin;
+
+            newBlockPos /= scale;
             Vector3 pos;
-            pos.x = Mathf.Round(newBlockPos.x /scale);
-            pos.y = Mathf.Round(newBlockPos.y / scale);
-            pos.z = Mathf.Round(newBlockPos.z / scale);
+            pos.x = (float)Math.Round(newBlockPos.x ,MidpointRounding.AwayFromZero);
+            pos.y = (float)Math.Round(newBlockPos.y , MidpointRounding.AwayFromZero);
+            pos.z = (float)Math.Round(newBlockPos.z , MidpointRounding.AwayFromZero);
 
             pos *= scale;
-            pos += new Vector3(0.045f, 0.0f,0.045f);
+
             Debug.Log(hit.normal);
             hitPosition = hit.point;
             Debug.DrawRay(hitPosition,hit.normal * scale / 2f, Color.red);
@@ -161,7 +166,7 @@ public class ChunkEditor : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(hitPosition, 0.05f);
+        Gizmos.DrawSphere(hitPosition, 0.005f);
         Gizmos.color = Color.yellow;
     }
 }

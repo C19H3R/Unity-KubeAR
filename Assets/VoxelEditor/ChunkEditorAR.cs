@@ -58,13 +58,16 @@ public class ChunkEditorAR : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 1000f))
         {
             Vector3 newBlockPos = hit.point + (hit.normal * scale) / 2f;
+            Vector3 origin = transform.position;
+            newBlockPos = newBlockPos - origin;
+
+            newBlockPos /= scale;
             Vector3 pos;
-            pos.x = Mathf.Round(newBlockPos.x /scale);
-            pos.y = Mathf.Round(newBlockPos.y / scale);
-            pos.z = Mathf.Round(newBlockPos.z / scale);
+            pos.x = (float)Math.Round(newBlockPos.x, MidpointRounding.AwayFromZero);
+            pos.y = (float)Math.Round(newBlockPos.y, MidpointRounding.AwayFromZero);
+            pos.z = (float)Math.Round(newBlockPos.z, MidpointRounding.AwayFromZero);
             pos *= scale;
-            pos += new Vector3(0.05f, 0.0f, 0.05f);
-            placeHolderPos = pos;
+            placeHolderPos = pos+origin;
         }
     }
 
@@ -86,19 +89,24 @@ public class ChunkEditorAR : MonoBehaviour
             pos.y = (float)Math.Round(newBlockPos.y / scale, MidpointRounding.AwayFromZero);
             pos.z = (float)Math.Round(newBlockPos.z / scale, MidpointRounding.AwayFromZero);
 
-            Debug.Log("newBlockPos" + newBlockPos);
+           /* Debug.Log("newBlockPos" + newBlockPos);
             Debug.Log("hit point" + hit.point);
             Debug.Log("pos" + pos);
-
+*/
 
             int size = _chunkSO.Size;
-            if (newBlockPos.x >= 0 && newBlockPos.y >= 0 && newBlockPos.z >= 0 &&
-                newBlockPos.x < size && newBlockPos.y < size && newBlockPos.z < size)
+            if (pos.x >= 0 && pos.y >= 0 && pos.z >= 0 &&
+                pos.x < size && pos.y < size && pos.z < size)
             {
 
                 _chunkSO.SetCell(pos, false);
+                Debug.Log("Created");
 
                 OnChunkUpdate?.Invoke(_chunkSO);
+            }
+            else
+            {
+                Debug.Log("");
             }
             transform.position = origin;
         }
@@ -121,17 +129,18 @@ public class ChunkEditorAR : MonoBehaviour
             pos.y = (float)Math.Round(newBlockPos.y / scale, MidpointRounding.AwayFromZero);
             pos.z = (float)Math.Round(newBlockPos.z / scale, MidpointRounding.AwayFromZero);
 
-            Debug.Log("newBlockPos" + newBlockPos);
+            /*Debug.Log("newBlockPos" + newBlockPos);
             Debug.Log("hit point" + hit.point);
             Debug.Log("pos" + pos);
-
+*/
 
             int size = _chunkSO.Size;
-            if (newBlockPos.x >= 0 && newBlockPos.y >= 0 && newBlockPos.z >= 0 &&
-                newBlockPos.x < size && newBlockPos.y < size && newBlockPos.z < size)
+            if (pos.x >= 0 && pos.y >= 0 && pos.z >= 0 &&
+                pos.x < size && pos.y < size && pos.z < size)
             {
 
                 _chunkSO.SetCell(pos, true);
+                Debug.Log("Destroyed");
 
                 OnChunkUpdate?.Invoke(_chunkSO);
             }

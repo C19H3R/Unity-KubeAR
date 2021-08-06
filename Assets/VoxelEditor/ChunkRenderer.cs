@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer),typeof(MeshCollider))]
 public class ChunkRenderer : MonoBehaviour
@@ -48,7 +49,13 @@ public class ChunkRenderer : MonoBehaviour
     private void Start()
     {
        // GenerateBasicChunkMesh(_chunkSO);
-        GenerateTerrainChunkMesh(_chunkSO);
+
+        if(SceneManager.GetActiveScene().buildIndex==0)
+            GenerateTerrainChunkMesh(_chunkSO);
+        else
+        {
+            GenerateChunkMesh(_chunkSO);
+        }
     }
     
     #endregion
@@ -56,33 +63,37 @@ public class ChunkRenderer : MonoBehaviour
 
     private void GenerateChunkMesh(Chunk chunkData)
     {
-        _updatedOrigin = this.transform.position;
-
-
-        _vertices = new List<Vector3>();
-        _triangles = new List<int>();
-
-
-        for (int x = 0; x < chunkData.Size; x++)
+        if (this != null)
         {
-            for (int y = 0; y < chunkData.Size; y++)
+           _updatedOrigin = this.transform.position;
+
+
+            _vertices = new List<Vector3>();
+            _triangles = new List<int>();
+
+
+            for (int x = 0; x < chunkData.Size; x++)
             {
-                for (int z = 0; z < chunkData.Size; z++)
+                for (int y = 0; y < chunkData.Size; y++)
                 {
-                    if (chunkData.GetCell(x, y, z) == 0)
+                    for (int z = 0; z < chunkData.Size; z++)
                     {
-                        continue;
-                    }
-                    else
-                    {
-                        Vector3 cubePos = new Vector3((float)x * _scale, (float)y * _scale, (float)z * _scale);
-                        MakeCube(_scale, cubePos, x, y, z, chunkData);
+                        if (chunkData.GetCell(x, y, z) == 0)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            Vector3 cubePos = new Vector3((float)x * _scale, (float)y * _scale, (float)z * _scale);
+                            MakeCube(_scale, cubePos, x, y, z, chunkData);
+                        }
                     }
                 }
             }
-        }
 
-        UpdateMesh();
+            UpdateMesh();
+        }
+        
     }
 
     private void MakeCube(float scale, Vector3 cubePos, int x, int y, int z, Chunk chunkData)
